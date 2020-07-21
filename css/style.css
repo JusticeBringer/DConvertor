@@ -1,0 +1,178 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+main{
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+section {
+    line-height: 1.7em;
+    font-size: 1.6em;
+}
+
+.fit100{
+    width: 100%;
+}
+.fit90{
+    width: 90%;
+}
+.fit80{
+    width: 80%;
+}
+.fit70{
+    width: 70%;
+}
+.fit60{
+    width: 60%;
+}
+.fit50{
+    width: 50%;
+}
+.fit40{
+    width: 40%;
+}
+.fit35{
+    width: 35%;
+}
+.fit30{
+    width: 30%;
+}
+.fit20{
+    width: 20%;
+}
+.fit15{
+    width: 15%;
+}
+.fit10{
+    width: 10%;
+}
+.fit5{
+    width: 5%;
+}
+.fit1{
+    width: 1%;
+}
+
+.fltLeftStyle{
+    float: left;
+}
+
+.fltRightStyle{
+    float: right;
+}
+
+.bigText{
+    font-size: 3vw;
+}
+
+.p-size{
+    font-size: 2vw;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.text-banner{
+    text-align: center;
+    font-size: 2.5vw;
+    color: black;
+    font-weight: 500;
+    padding-top: 5vh;
+    margin: 0 0 10vh 0;
+}
+
+.banner{
+    background-color: #efefef;
+    color: white;
+    padding: 0 0 2.5vw 0;
+}
+
+label{
+    font-size: 1vw;
+    color: black;
+}
+label:after{
+    margin: 0 0 1.2vh 0 !important;
+}
+
+#container{
+    margin-top: 10vh;
+}
+
+#header-wrap {
+    position: fixed;
+    width: 100%;
+    height: 2vh;
+    top: 0;
+    z-index: 1;
+}
+
+.some-space-left{
+	margin-left: 2vw;
+}
+.big-name{
+	font-size: 2vw !important;
+	line-height: 3vh;
+}
+.barLooks{
+	background-color: #ffffff;
+	box-shadow: 5px 2px 5px #888888;
+	padding: 0.7vw 0.4vw 0.7vw 0.6vw;
+	margin: 0 0 2vw 0;
+}
+.footerLooks{
+	background-color: #3d3a3a;
+	box-shadow: 5px 2px 5px #888888;
+	padding: 0.7vw 0.4vw 3.7vw 0.6vw;
+}
+
+.menu {
+	list-style-type: none;
+	overflow: hidden;
+}
+.menu .icon{
+	display: none;
+}
+li {
+	float: left;
+	line-height: 3.4vh;
+}
+a{
+	font-size: 1.1vw !important;
+	text-decoration: none;
+	margin-right: 1.3vw;
+	color: #44b4d2;
+}
+a:hover{
+	color: #1441b0;
+}
+.fltLeft{
+	float: left;
+}
+.fltRight{
+	float: right;
+}
+
+#page-container {
+	position: relative;
+	min-height: 100vh;
+  }
+  
+#content-wrap {
+	padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;            /* Footer height */
+}
