@@ -18,6 +18,43 @@ function forImportIo(){
 	request.send();
 }
 
-window.onload = function (){
+function convertText(tex){
+	console.log(tex);
+	var words = tex.split(" ");
+	for (let x of words){
+		console.log(x);
+	}
+}
 
+function moveText(){
+	var pasteArea = document.getElementById('pasteArea');
+
+	var convertArea = document.getElementById('convertedText');
+	convertArea.value = pasteArea.value;
+
+	console.log(convertArea.value);
+	convertText(convertArea.value);
+}
+
+function insertCopied(){
+	var toInsertArea = document.getElementById("pasteArea");
+	navigator.clipboard.readText()
+    .then((text)=>{
+        toInsertArea.value = text;
+	});
+}
+
+function clearTooltip(){
+	var tooltip = document.getElementById("myTooltip");
+  	tooltip.innerHTML = "Copiază";
+}
+
+window.onload = function (){
+	document.getElementById('copyPasted').addEventListener('click', ()=>{
+		let copyArea = document.getElementById('convertedText');
+		navigator.clipboard.writeText(copyArea.value);
+
+		var tooltip = document.getElementById("myTooltip");
+  		tooltip.innerHTML = "Copiat";
+	});
 }

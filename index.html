@@ -11,8 +11,6 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap">
 
 	<script src='./js/index.js'></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 
 </head>
 <body>
@@ -44,45 +42,80 @@
 	</header>
 
 	<div class="row">
-		<div class="fit15 fltLeft"><p></p></div>
-		<div class="fit10 fltLeft addBorderBot">
-
-			<h1 class="textC"> Reguli: </h1>
-			<ul class="cancelFloat">
-				<li>
-					î &rarr; â
-				</li>
-				<li>
-					Isus &rarr; Iisus
-				</li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="fit15 fltLeft"><p/></div>
-		<div class="fit80 fltLeft">
-			<p class="alterLabel">Introduceti link-ul</p> </br>
-			
-			<input type="text">
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="fit15 fltLeft"><p/></div>
-		<div class="fit80 fltLeft">
-			<div> <p class="alterLabel makeLateral"> Sau </p>
+		<div class="fit40 fltLeft">
+			<div class="row">
+				<div class="fit30 fltLeft"><p></p></div>
+				<div class="fit40 fltLeft addBorderBot">
+					<h1 class="textC"> Reguli: </h1>
+					<ul class="cancelFloat">
+						<li>
+							î &rarr; â/u
+						</li>
+						<li>
+							Isus &rarr; Iisus
+						</li>
+					</ul>
 				</div>
-		</div>
-	</div>
+			</div>
+			<div class="row">
+				<div class="fit30 fltLeft"><p/></div>
+				<div class="fit40 fltLeft">
+					<p class="alterLabel">Introduceți link-ul</p> </br>
+					
+					<input type="text">
+				</div>
+			</div>
+			<div class="row">
+				<div class="fit30 fltLeft"><p/></div>
+				<div class="fit40 fltLeft">
+					<div> <p class="alterLabel makeLateral"> Sau </p>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="fit30 fltLeft"><p/></div>
+				<div class="fit70 fltLeft">
+					<button class="alterLabel btLog" id="paste" onclick="insertCopied()"> Inserați textul copiat </button>
+					<span> sau Introduceți textul </span> 
+					</br>
+					</br>
+					<textarea id="pasteArea" name="pasteArea" rows="15" cols="50">
+					
+					</textarea>
+				</div>
+			</div>
 
-	<div class="row">
-		<div class="fit15 fltLeft"><p/></div>
-		<div class="fit80 fltLeft">
-			<p class="alterLabel">Introduceți textul</p> </br>
-			<textarea id="takeText" name="takeText" rows="20" cols="50">
-			 
-			</textarea>
+		</div>
+
+		<div class="fit15 fltLeft">
+			<div class="row">
+				<div class="fit5 fltLeft spaceToMiddle"></p>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="fit5 fltLeft"> </p></div>
+				<button class="hwB difBut" id="btCon" onclick="moveText()"> Convertește </button>
+			</div>
+		</div>
+
+		<div class="fit40 fltLeft">
+			<div class="row">
+				<div class="fit5 fltLeft"> </p></div>
+				<div class="fit90 fltLeft">
+					<h1 class="textC"> Textul convertit </h1>
+					<div class="tooltip">
+						<button class="copyBut" id="copyPasted" onmouseout="clearTooltip()"> 
+							<span class="tooltiptext" id="myTooltip">Copiază</span>
+							Copiază textul 
+						</button>
+					</div>
+					</br>
+					
+					<textarea id="convertedText" name="convertedText" rows="35" cols="50">
+					
+					</textarea>
+				</div>
+			</div>
 		</div>
 	</div>
 
