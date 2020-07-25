@@ -18,12 +18,74 @@ function forImportIo(){
 	request.send();
 }
 
-function convertText(tex){
-	console.log(tex);
-	var words = tex.split(" ");
-	for (let x of words){
-		console.log(x);
+function transformDia(tDia){
+	if(tDia === "Isus")
+		return "Iisus";
+	if(tDia === "sînt")
+		return "sunt";
+	
+	var newW = "";
+	newW += tDia[0];
+	for(let i = 1; i < tDia.length - 1; i ++){
+		if(tDia[i] === 'î')
+			newW += 'â';
+		else
+			newW += tDia[i];
 	}
+
+	if(tDia.length > 1)
+		newW += tDia[tDia.length - 1];
+
+	var newWrd = "";
+	console.log(newW);
+
+	if(newW.search("Isus") >= 0){
+		for(let i = 0; i < tDia.length; i ++){
+			if(       newW[i] === 'I' 
+			   && newW[i + 1] === 's'
+			   && newW[i + 2] === 'u'
+			   && newW[i + 3] === 's')
+				{
+					newWrd += "Iisus";
+					i += 3;
+				}
+			else
+				newWrd += newW[i];
+		}
+	}
+	else return newW;
+
+	return newWrd;
+}
+
+function convertText(textTo){
+	var sngWrd = "";
+	var newText = "";
+
+	for (var x of textTo){
+		if(x === " "){
+			sngWrd = transformDia(sngWrd);
+			newText += sngWrd + " ";
+
+			sngWrd = "";
+		}
+		else if(x === '\n'){
+			sngWrd = transformDia(sngWrd);
+			newText += sngWrd + '\n';
+
+			sngWrd = "";
+		}
+		else{
+			sngWrd += x;
+		}
+	}
+	
+	if (x !== " " && x !== "\n")
+		sngWrd = transformDia(sngWrd);
+	newText += sngWrd + '\n';
+
+	console.log(newText);
+	return newText;
 }
 
 function moveText(){
@@ -32,8 +94,7 @@ function moveText(){
 	var convertArea = document.getElementById('convertedText');
 	convertArea.value = pasteArea.value;
 
-	console.log(convertArea.value);
-	convertText(convertArea.value);
+	convertArea.value = convertText(convertArea.value);
 }
 
 function insertCopied(){
