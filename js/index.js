@@ -19,6 +19,10 @@ function forImportIo(){
 }
 
 function transformDia(tDia){
+	if(tDia === ""){
+		return " ";
+	}
+
 	if(tDia === "Isus")
 		return "Iisus";
 	if(tDia === "sînt")
@@ -63,6 +67,9 @@ function convertText(textTo){
 	var newText = "";
 
 	for (var x of textTo){
+		// if (typeof sngWrd === 'undefined')
+		// 	continue;
+
 		if(x === " "){
 			sngWrd = transformDia(sngWrd);
 			newText += sngWrd + " ";
@@ -80,9 +87,13 @@ function convertText(textTo){
 		}
 	}
 	
-	if (x !== " " && x !== "\n")
-		sngWrd = transformDia(sngWrd);
-	newText += sngWrd + '\n';
+	if (typeof sngWrd !== 'undefined'){
+		if (x !== " " && x !== "\n"){
+			sngWrd = transformDia(sngWrd);
+		}
+
+		newText += sngWrd + '\n';
+	}
 
 	console.log(newText);
 	return newText;
