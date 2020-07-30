@@ -1,0 +1,109 @@
+@media (max-width: 425px) {
+	.barLooks{
+		margin: 0 0 0.5vw 0;
+		width: 100%;
+	}
+
+	.big-name{
+		font-size: 5vw !important;
+		line-height: 5vh;
+	}
+	.menu{
+		padding: 0;
+	}
+	.btn-magic {
+		padding: 0.2vw;
+		margin: 0.2vw !important;
+		font-size: 3.5vw !important;
+	}
+	li.fltRight{
+		margin-right: 5vw;
+		line-height: 5vh;
+	}
+	[class*="fit"] {
+		width: 100%;
+	}
+	.textC{
+		margin: 5vh 0 2vh 5vh;
+		font-size: 6vw;
+	}
+	ul.cancelFloat > li{
+		font-size: 4vw;
+		line-height: 4vh;
+		margin-left: 4vh;
+	}
+	.addBorderBot{
+		border: none;
+	}
+	.btLog{
+		margin: 1vh 0 1vh 5vh;
+		padding: 0.5vw;
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 4vw;
+	}
+	span{
+		font-size: 3vw;
+	}
+	#paste{
+		margin-right: 2.2vw;
+	}
+	#pasteArea{
+		display: none;
+	}
+
+	#pasteAreaMob425{
+		display: inline-block;
+	}
+
+	textarea{
+		width: 70%;
+		margin: 0.2vh 0vh 2vh 4vh;
+	}
+
+	.spaceToMiddle{
+		margin: 1vw;
+	}
+
+	.difBut{
+		border-radius: 8px;
+		font-size: 4vw;
+		margin: 0 0 0 5vh;
+	}
+
+	.hwB{
+		height: 6vh;
+		width: 70%;
+	}
+
+	.copyBut{
+		border-radius: 4px;
+		font-size: 4vw;
+		margin: 1vh 0 1vh 5vh;
+		padding: 0.75vw;
+	}
+
+	#convertedText{
+		display: none;
+	}
+	#convertedTextMob425{
+		display: inline-block;
+	}
+	#footer {
+		display: none;        /* Footer height */
+	}
+	#footerMob{
+		display: inline-block;
+		width: 100%;
+		margin-top: 4vh;
+	}
+	.footerLooks{
+		padding: 3vw;
+	}
+	div.fit80.fltLeft{
+		float: left;
+	}
+	#footerMob > div > div > nav > ul > li.fltRight > a{
+		font-size: 3vw !important;
+	}
+} 
