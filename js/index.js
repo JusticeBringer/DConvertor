@@ -100,16 +100,32 @@ function convertText(textTo){
 }
 
 function moveText(){
-	var pasteArea = document.getElementById('pasteArea');
+	var pasteArea;
+	var convertArea;
 
-	var convertArea = document.getElementById('convertedText');
+	if(document.documentElement.clientWidth <= 425){
+		pasteArea = document.getElementById("pasteAreaMob425");
+		convertArea = document.getElementById('convertedTextMob425');
+	}
+	else{
+		pasteArea = document.getElementById("pasteArea");
+		convertArea = document.getElementById('convertedText');
+	}
+
 	convertArea.value = pasteArea.value;
-
 	convertArea.value = convertText(convertArea.value);
 }
 
 function insertCopied(){
-	var toInsertArea = document.getElementById("pasteArea");
+	var toInsertArea = "";
+
+	if(document.documentElement.clientWidth <= 425){
+		toInsertArea = document.getElementById("pasteAreaMob425");
+	}
+	else{
+		toInsertArea = document.getElementById("pasteArea");
+	}
+
 	navigator.clipboard.readText()
     .then((text)=>{
         toInsertArea.value = text;
@@ -123,7 +139,15 @@ function clearTooltip(){
 
 window.onload = function (){
 	document.getElementById('copyPasted').addEventListener('click', ()=>{
-		let copyArea = document.getElementById('convertedText');
+		let copyArea;
+
+		if(document.documentElement.clientWidth <= 425){
+			copyArea = document.getElementById('convertedTextMob425');
+		}
+		else{
+			copyArea = document.getElementById('convertedText');
+		}
+
 		navigator.clipboard.writeText(copyArea.value);
 
 		var tooltip = document.getElementById("myTooltip");
