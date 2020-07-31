@@ -1,3 +1,58 @@
 @media (min-width: 640px) {
-	
+	.barLooks{
+		margin: 0 0 0.5vw 0;
+		width: 100%;
+	}
+	.big-name{
+		font-size: 4vw !important;
+		line-height: 5vh;
+	}
+	.menu{
+		padding: 0;
+	}
+	.btn-magic {
+		padding: 0.2vw;
+		margin: 0.2vw !important;
+		font-size: 3vw !important;
+	}
+	li.fltRight{
+		margin-right: 4vw;
+		line-height: 5vh;
+	}
+
+	/* --- Menu until here --- */
+
+	.fit15{
+		width: 5%;
+	}
+
+	.fit30{
+		width: 10%;
+	}
+
+
+	.fit40{
+		width: 40%;
+	}
+
+	.textC{
+		margin: 5vh 0 2vh 1	vh;
+		font-size: 3.5vw;
+	}
+	ul.cancelFloat > li{
+		line-height: 4vh;
+		margin-left: 0vh;
+	}
+	.btLog{
+		margin: 2vh 0 1vh 0vh;
+		padding: 0.5vw;
+		border-radius: 4px;
+		font-size: 2vw;
+	}
+	span{
+		font-size: 2vw;
+	}
+	#paste{
+		margin-right: 1.5vw;
+	}
 }

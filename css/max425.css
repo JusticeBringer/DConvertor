@@ -1,12 +1,15 @@
 @media (max-width: 425px) {
+	
+
 	.barLooks{
 		margin: 0 0 0.5vw 0;
-		width: 100%;
+		margin: 0 0 0.5vw 0;
 	}
 
 	.big-name{
 		font-size: 5vw !important;
 		line-height: 5vh;
+		margin-left: 2vw;
 	}
 	.menu{
 		padding: 0;
@@ -15,13 +18,37 @@
 		padding: 0.2vw;
 		margin: 0.2vw !important;
 		font-size: 3.5vw !important;
+		float: none;
 	}
 	li.fltRight{
-		margin-right: 5vw;
+		margin-right: 10vw;
 		line-height: 5vh;
 	}
+
+	/* --- Menu until here --- */
+
+	li {
+		line-height: 3.4vh;
+	}
+	
+	a{
+		font-size: 1.1vw;
+	}
+	.hwB{
+		height: 0vh;
+		width: 0vw;
+	}
+
+	.spaceToMiddle{
+		margin-bottom: 2vh;
+	}
+
+	.some-space-left{
+		margin-left: 2vw;
+	}
+
 	[class*="fit"] {
-		width: 100%;
+		width: 90%;
 	}
 	.textC{
 		margin: 5vh 0 2vh 5vh;
@@ -32,6 +59,22 @@
 		line-height: 4vh;
 		margin-left: 4vh;
 	}
+
+	.alterLabel{
+		margin: 0 0 0 0;
+	}
+
+	label:after{
+		margin: 0 0 1vh 0 !important;
+	}
+
+	.makeLateral{
+		border-left: 2px solid red;
+		border-right: 2px solid red;
+		width: fit-content;
+		padding: 0.3vw;
+	}
+
 	.addBorderBot{
 		border: none;
 	}
@@ -39,7 +82,6 @@
 		margin: 1vh 0 1vh 5vh;
 		padding: 0.5vw;
 		border-radius: 4px;
-		cursor: pointer;
 		font-size: 4vw;
 	}
 	span{
@@ -90,20 +132,22 @@
 		display: inline-block;
 	}
 	#footer {
-		display: none;        /* Footer height */
+		display: none;  
 	}
 	#footerMob{
 		display: inline-block;
-		width: 100%;
+		width: 85%;
 		margin-top: 4vh;
 	}
+
 	.footerLooks{
-		padding: 3vw;
+		padding: 0;
+		margin: 0;
 	}
 	div.fit80.fltLeft{
 		float: left;
 	}
 	#footerMob > div > div > nav > ul > li.fltRight > a{
-		font-size: 3vw !important;
+		font-size: 3vw;
 	}
 } 

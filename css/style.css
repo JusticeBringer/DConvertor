@@ -78,116 +78,70 @@ section {
     clear: both;
 }
 
-.bigText{
-    font-size: 3vw;
-}
-
-.p-size{
-    font-size: 2vw;
-}
-
 .text-banner{
     text-align: center;
-    font-size: 2.5vw;
     color: black;
     font-weight: 500;
-    padding-top: 5vh;
-    margin: 0 0 10vh 0;
 }
 
 .textC{
-    margin-top: 5vh;
-    font-size: 1.5vw;
     color: black;
-    padding: 0.2vw;
 }
 
 .banner{
     background-color: #efefef;
     color: white;
-    padding: 0 0 2.5vw 0;
 }
 
-.some-space-left{
-	margin-left: 2vw;
-}
 
-.big-name{
-	font-size: 2vw !important;
-	line-height: 3vh;
-}
 .barLooks{
-	background-color: #ffffff;
-	box-shadow: 5px 2px 5px #888888;
-	padding: 0.7vw 0.4vw 0.7vw 0.6vw;
-	margin: 0 0 0.5vw 0;
+    background-color: #ffffff;
+    box-shadow: 5px 2px 5px #888888;
 }
 .footerLooks{
-	background-color: #3d3a3a;
-	box-shadow: 5px 2px 5px #888888;
-	padding: 0.7vw 0.4vw 3.7vw 0.6vw;
+    background-color: #3d3a3a;
+    box-shadow: 5px 2px 5px #888888;
 }
 
 .menu {
-	list-style-type: none;
-	overflow: hidden;
+    list-style-type: none;
+    overflow: hidden;
 }
 .menu .icon{
-	display: none;
+    display: none;
 }
 
 li {
-	float: left;
-	line-height: 3.4vh;
+    float: left;
 }
 
 a{
-	font-size: 1.1vw !important;
-	text-decoration: none;
-	margin-right: 1.3vw;
-	color: #44b4d2;
+    text-decoration: none;
+    color: #44b4d2;
 }
 
 a:hover{
-	color: #1441b0;
+    color: #1441b0;
 }
 .fltLeft{
-	float: left;
+    float: left;
 }
 .fltRight{
-	float: right;
-}
-.hwB{
-    height: 10vh;
-    width: 10vw;
-}
-
-.spaceToMiddle{
-    margin-bottom: 20vh;
+    float: right;
 }
 
 #footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-    height: 4vw;   
-    margin-top: 10vh;         /* Footer height */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .cancelFloat li{
     float: none;
 }
 
-.alterLabel{
-    margin: 3vh 0 0 0;
-}
-
 label{
     color: black;
-}
-
-label:after{
-    margin: 0 0 1.2vh 0 !important;
 }
 
 .makeLateral{
@@ -209,7 +163,6 @@ label:after{
     border-radius: 4px;
     cursor: pointer;
     transition: ease-in-out 0.4s;
-    font-size: 0.8vw;
 }
 .btLog:hover{
     background-color: #3974ac;
@@ -222,7 +175,6 @@ label:after{
     border-radius: 4px;
     cursor: pointer;
     transition: ease-in-out 0.4s;
-    font-size: 1.4vw;
 }
 .difBut:hover{
     background-color: #375d7e;
@@ -235,10 +187,8 @@ label:after{
     border-radius: 4px;
     cursor: pointer;
     transition: ease-in-out 0.4s;
-    font-size: 1vw;
-    margin-bottom: 1vw;
-    padding: 0.5vw;
 }
+
 .copyBut:hover{
     background-color: #2d6964;
 }
@@ -284,10 +234,7 @@ label:after{
 .btn-magic {
     border: 1px solid black;
     background-color: cadetblue;
-    padding: 0.2vw;
-    margin: 0.2vw !important;
     color: white;
-    font-size: 1vw !important;
     transition: ease-in-out 0.3s;
 }
 .btn-magic:hover{
