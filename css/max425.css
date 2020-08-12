@@ -50,12 +50,12 @@
 		width: 90%;
 	}
 	.textC{
-		margin: 3vh 0 2vh 5vh;
+		margin: 4.5vh 0 2vh 5vh;
 		font-size: 6vw;
 	}
 	ul.cancelFloat > li{
 		font-size: 4vw;
-		line-height: 3vh;
+		line-height: 3.7vh;
 		margin-left: 4vh;
 	}
 
@@ -78,15 +78,15 @@
 		border: none;
 	}
 	.btLog{
-		margin: 1vh 0 1vh 5vh;
-		padding: 0.5vw;
+		margin: 1.5vh 0 1.5vh 5vh;
+		padding: 1.3vw;
 		border-radius: 4px;
 		font-size: 4vw;
 	}
 	span{
 		font-size: 3vw;
 		display: inline-block;
-		margin-left: 5vh;
+		margin: 0 0 0.5vh 5vh;
 	}
 	#paste{
 		margin-right: 2.2vw;
@@ -123,8 +123,8 @@
 	.copyBut{
 		border-radius: 4px;
 		font-size: 4vw;
-		margin: 1vh 0 1vh 5vh;
-		padding: 0.75vw;
+		margin: 0vh 0 1.3vh 5vh;
+		padding: 1.3vw;
 	}
 
 	.footerLooks{
