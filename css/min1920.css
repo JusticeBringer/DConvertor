@@ -1,10 +1,10 @@
-@media (min-width: 1024px) {
+@media (min-width: 1920px) {
 	.barLooks{
 		margin: 0 0 0.5vw 0;
 		width: 100%;
 	}
 	.big-name{
-		font-size: 4vw !important;
+		font-size: 2.5vw !important;
 		line-height: 5vh;
 	}
 	.menu{
@@ -13,7 +13,7 @@
 	.btn-magic {
 		padding: 0.2vw;
 		margin: 0.2vw !important;
-		font-size: 3vw !important;
+		font-size: 2vw !important;
 	}
 	li.fltRight{
 		margin-right: 4vw;
@@ -22,8 +22,11 @@
 
 	/* --- Menu until here --- */
 
-	.fit15{
+	.fit5{
 		width: 5%;
+	}
+	.fit15 {
+		width: 15%;
 	}
 
 	.fit30{
@@ -32,40 +35,44 @@
 
 
 	.fit40{
-		width: 50%;
+		width: 35%;
+	}
+	.fit90{
+		margin-left: 10vh;
 	}
 
 	.textC{
-		margin: 5vh 0 2vh 2vh;
-		font-size: 3.5vw;
-	}
-	ul.cancelFloat > li{
-		line-height: 6vh;
-		margin-left: 0.5vh;
+		margin: 5vh 0 2vh 0vh;
 		font-size: 2.5vw;
 	}
+	ul.cancelFloat > li{
+		line-height: 5vh;
+		margin-left: 0.5vh;
+		font-size: 1.5vw;
+	}
 	.btLog{
-		margin: 2vh 0 1vh 0vh;
+		margin: 2vh 0 1vh 2vh;
 		padding: 0.5vw;
 		border-radius: 4px;
-		font-size: 2vw;
+		font-size: 1vw;
 	}
 	span{
-		font-size: 2vw;
+		font-size: 1vw;
 	}
 	#paste{
 		margin-right: 1.5vw;
 	}
 	.hwB{
-		height: 8vh;
+		height: 6vh;
 		width: 100%;
-		padding: 1vh 20vh 1vh 5vh;
-		font-size: 2.5vw;
+		margin: 10vh 0 5vh 0;
+		padding: 1vh 1vh 1vh 1vh;
+		font-size: 1.5vw;
 	}
 	
 	.copyBut{
 		border-radius: 4px;
-		font-size: 2vw;
+		font-size: 1vw;
 		margin: 1vh 0 1vh 2vh;
 		padding: 0.75vw;
 	}
@@ -82,8 +89,10 @@
 		display: inline-block;
 		background-color: rgb(33, 48, 49);
 	}
+
 	#pasteAreaMob425 {
 		display: inline-block;
 		border: 1px solid black;
+		margin-right: 5vh;
 	}
 }

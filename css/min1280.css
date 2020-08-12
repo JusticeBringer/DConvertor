@@ -1,201 +1,90 @@
 @media (min-width: 1280px) {
-	.bigText{
-		font-size: 3vw;
-	}
-	
-	.p-size{
-		font-size: 2vw;
-	}
-	
-	.text-banner{
-		text-align: center;
-		font-size: 2.5vw;
-		color: black;
-		font-weight: 500;
-		padding-top: 5vh;
-		margin: 0 0 10vh 0;
-	}
-	
-	.textC{
-		margin-top: 5vh;
-		font-size: 1.5vw;
-		color: black;
-		padding: 0.2vw;
-	}
-	
-	.banner{
-		background-color: #efefef;
-		color: white;
-		padding: 0 0 2.5vw 0;
-	}
-	
-	.some-space-left{
-		margin-left: 2vw;
-	}
-	
-	.big-name{
-		font-size: 2vw !important;
-		line-height: 3vh;
-	}
 	.barLooks{
-		background-color: #ffffff;
-		box-shadow: 5px 2px 5px #888888;
-		padding: 0.7vw 0.4vw 0.7vw 0.6vw;
 		margin: 0 0 0.5vw 0;
+		width: 100%;
 	}
-	.footerLooks{
-		background-color: #3d3a3a;
-		box-shadow: 5px 2px 5px #888888;
-		padding: 0.7vw 0.4vw 3.7vw 0.6vw;
+	.big-name{
+		font-size: 4vw !important;
+		line-height: 5vh;
 	}
-	
-	li {
-		line-height: 3.4vh;
+	.menu{
+		padding: 0;
 	}
-	
-	a{
-		font-size: 1.1vw;
-		margin-right: 1.3vw;
+	.btn-magic {
+		padding: 0.2vw;
+		margin: 0.2vw !important;
+		font-size: 3vw !important;
 	}
-	
-	a:hover{
-		color: #1441b0;
+	li.fltRight{
+		margin-right: 4vw;
+		line-height: 5vh;
 	}
-	.fltLeft{
-		float: left;
+
+	/* --- Menu until here --- */
+
+	.fit15{
+		width: 5%;
 	}
-	.fltRight{
-		float: right;
+
+	.fit30{
+		width: 10%;
 	}
-	.hwB{
-		height: 10vh;
-		width: 10vw;
+
+
+	.fit40{
+		width: 50%;
 	}
-	
-	.spaceToMiddle{
-		margin-bottom: 20vh;
+
+	.textC{
+		margin: 5vh 0 2vh 2vh;
+		font-size: 3.5vw;
 	}
-	
-	#footer {
-		height: 4vw;   
-		margin-top: 10vh;
+	ul.cancelFloat > li{
+		line-height: 6vh;
+		margin-left: 0.5vh;
+		font-size: 2.5vw;
 	}
-	
-	.cancelFloat li{
-		float: none;
-	}
-	
-	.alterLabel{
-		margin: 3vh 0 0 0;
-	}
-	
-	label{
-		color: black;
-	}
-	
-	label:after{
-		margin: 0 0 1.2vh 0 !important;
-	}
-	
-	.makeLateral{
-		border-left: 2px solid red;
-		border-right: 2px solid red;
-		width: fit-content;
-		padding: 0.3vw;
-	}
-	
-	.addBorderBot{
-		border-bottom: 2px solid black;
-	}
-	
 	.btLog{
+		margin: 2vh 0 1vh 0vh;
 		padding: 0.5vw;
 		border-radius: 4px;
-		font-size: 0.8vw;
+		font-size: 2vw;
 	}
-	.btLog:hover{
-		background-color: #3974ac;
+	span{
+		font-size: 2vw;
 	}
-	
-	.difBut{
-		border: none;
-		border-radius: 4px;
-		font-size: 1.4vw;
+	#paste{
+		margin-right: 1.5vw;
 	}
-	.difBut:hover{
-		background-color: #375d7e;
+	.hwB{
+		height: 8vh;
+		width: 100%;
+		padding: 1vh 25vh 1vh 5vh;
+		font-size: 2.5vw;
 	}
 	
 	.copyBut{
 		border-radius: 4px;
-		cursor: pointer;
-		font-size: 1vw;
-		margin-bottom: 1vw;
-		padding: 0.5vw;
+		font-size: 2vw;
+		margin: 1vh 0 1vh 2vh;
+		padding: 0.75vw;
 	}
-	.copyBut:hover{
-		background-color: #2d6964;
+
+	textarea {
+		width: 70%;
+		margin: 0.4vh 0vh 2vh 2vh;
 	}
-	
-	.tooltip {
-		position: relative;
+
+	#footerMob {
+		display: none;
+	}
+	#footer{
 		display: inline-block;
-	  }
-	  
-	.tooltip .tooltiptext {
-		visibility: hidden;
-		width: 140px;
-		background-color: #555;
-		color: #fff;
-		text-align: center;
-		border-radius: 6px;
-		padding: 5px;
-		position: absolute;
-		z-index: 1;
-		bottom: 150%;
-		left: 50%;
-		margin-left: -75px;
-		opacity: 0;
-		transition: opacity 0.3s;
+		background-color: rgb(33, 48, 49);
 	}
-	
-	.tooltip .tooltiptext::after {
-		content: "";
-		position: absolute;
-		top: 100%;
-		left: 50%;
-		margin-left: -5px;
-		border-width: 5px;
-		border-style: solid;
-		border-color: #555 transparent transparent transparent;
-	}
-	
-	.tooltip:hover .tooltiptext {
-		visibility: visible;
-		opacity: 1;
-	}
-	
-	.btn-magic {
+
+	#pasteAreaMob425 {
+		display: inline-block;
 		border: 1px solid black;
-		background-color: cadetblue;
-		padding: 0.2vw;
-		margin: 0.2vw !important;
-		color: white;
-		font-size: 1vw !important;
-		transition: ease-in-out 0.3s;
-	}
-	.btn-magic:hover{
-		color: white;
-		background-color: rgb(59, 97, 99);
-	}
-	
-	#pasteAreaMob425{
-		display: none;
-	}
-	#convertedTextMob425{
-		display: none;
-	}
-	#footerMob{
-		display: none;
 	}
 }

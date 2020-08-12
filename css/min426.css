@@ -1,4 +1,4 @@
-@media (max-width: 425px) {
+@media (min-width: 426px) {
 	
 
 	.barLooks{
@@ -114,9 +114,8 @@
 	}
 
 	.hwB{
-		height: 5vh;
+		height: 6vh;
 		width: 65%;
-		font-size: 4vw;
 	}
 
 	.copyBut{
@@ -133,7 +132,7 @@
 		display: inline-block;
 	}
 	#footer {
-		background-color: rgb(36, 37, 41) 
+		display: none;  
 	}
 
 	.footerLooks{

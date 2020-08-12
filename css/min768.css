@@ -1,0 +1,85 @@
+@media (min-width: 768px) {
+	.barLooks{
+		margin: 0 0 0.5vw 0;
+		width: 100%;
+	}
+	.big-name{
+		font-size: 4vw !important;
+		line-height: 5vh;
+	}
+	.menu{
+		padding: 0;
+	}
+	.btn-magic {
+		padding: 0.2vw;
+		margin: 0.2vw !important;
+		font-size: 3vw !important;
+	}
+	li.fltRight{
+		margin-right: 4vw;
+		line-height: 5vh;
+	}
+
+	/* --- Menu until here --- */
+
+	.fit15{
+		width: 5%;
+	}
+
+	.fit30{
+		width: 10%;
+	}
+
+
+	.fit40{
+		width: 50%;
+	}
+
+	.textC{
+		margin: 5vh 0 2vh 2vh;
+		font-size: 3.5vw;
+	}
+	ul.cancelFloat > li{
+		line-height: 4vh;
+		margin-left: 0vh;
+		font-size: 2.5vw;
+	}
+	.btLog{
+		margin: 2vh 0 1vh 0vh;
+		padding: 0.5vw;
+		border-radius: 4px;
+		font-size: 2vw;
+	}
+	span{
+		font-size: 2vw;
+	}
+	#paste{
+		margin-right: 1.5vw;
+	}
+	.hwB{
+		height: 6vh;
+		width: 100%;
+		padding: 0 15vh 0 2vh;
+		font-size: 2vw;
+	}
+	
+	.copyBut{
+		border-radius: 4px;
+		font-size: 2vw;
+		margin: 1vh 0 1vh 2vh;
+		padding: 0.75vw;
+	}
+
+	textarea {
+		width: 70%;
+		margin: 0.4vh 0vh 2vh 2vh;
+	}
+
+	#footerMob {
+		display: none;
+	}
+	#footer{
+		display: inline-block;
+		background-color: rgb(33, 48, 49);
+	}
+}
