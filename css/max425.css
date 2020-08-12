@@ -16,12 +16,11 @@
 	}
 	.btn-magic {
 		padding: 0.2vw;
-		margin: 0.2vw !important;
+		margin: 0.2vw 0.2vw 0.2vw 1vw !important;
 		font-size: 3.5vw !important;
 		float: none;
 	}
 	li.fltRight{
-		margin-right: 10vw;
 		line-height: 5vh;
 	}
 
@@ -51,12 +50,12 @@
 		width: 90%;
 	}
 	.textC{
-		margin: 5vh 0 2vh 5vh;
+		margin: 3vh 0 2vh 5vh;
 		font-size: 6vw;
 	}
 	ul.cancelFloat > li{
 		font-size: 4vw;
-		line-height: 4vh;
+		line-height: 3vh;
 		margin-left: 4vh;
 	}
 
@@ -94,7 +93,7 @@
 	}
 	
 	#pasteArea {
-		height: 20vh;
+		height: 15vh;
 	}
 
 	#convertedText {

@@ -88,4 +88,11 @@
 	textarea{
 		margin: 0.4vh 0vh 2vh 2vh;
 	}
+	.tooltip .tooltiptext {
+		width: 5vw;
+		border-radius: 6px;
+		padding: 1vw;
+		margin-left: -3vw;
+		font-size: 1.4vw;
+	}	
 }

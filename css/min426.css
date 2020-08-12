@@ -21,7 +21,6 @@
 		float: none;
 	}
 	li.fltRight{
-		margin-right: 10vw;
 		line-height: 5vh;
 	}
 
@@ -51,7 +50,7 @@
 		width: 90%;
 	}
 	.textC{
-		margin: 5vh 0 2vh 5vh;
+		margin: 3vh 0 2vh 5vh;
 		font-size: 6vw;
 	}
 	ul.cancelFloat > li{
@@ -92,7 +91,7 @@
 	}
 	
 	#pasteArea {
-		height: 20vh;
+		height: 15vh;
 	}
 
 	#convertedText {
