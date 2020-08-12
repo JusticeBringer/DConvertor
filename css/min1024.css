@@ -70,20 +70,15 @@
 		padding: 0.75vw;
 	}
 
-	textarea {
-		width: 70%;
-		margin: 0.4vh 0vh 2vh 2vh;
+	#pasteArea {
+		height: 20vh;
 	}
 
-	#footerMob {
-		display: none;
+	#convertedText {
+		height: 20vh;
 	}
-	#footer{
-		display: inline-block;
-		background-color: rgb(33, 48, 49);
-	}
-	#pasteAreaMob425 {
-		display: inline-block;
-		border: 1px solid black;
+
+	textarea{
+		margin: 0.4vh 0vh 2vh 2vh;
 	}
 }

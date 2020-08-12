@@ -77,22 +77,15 @@
 		padding: 0.75vw;
 	}
 
-	textarea {
-		width: 70%;
+	#pasteArea {
+		height: 20vh;
+	}
+
+	#convertedText {
+		height: 20vh;
+	}
+
+	textarea{
 		margin: 0.4vh 0vh 2vh 2vh;
-	}
-
-	#footerMob {
-		display: none;
-	}
-	#footer{
-		display: inline-block;
-		background-color: rgb(33, 48, 49);
-	}
-
-	#pasteAreaMob425 {
-		display: inline-block;
-		border: 1px solid black;
-		margin-right: 5vh;
 	}
 }

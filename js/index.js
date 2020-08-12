@@ -100,31 +100,15 @@ function convertText(textTo){
 }
 
 function moveText(){
-	var pasteArea;
-	var convertArea;
-
-	if(document.documentElement.clientWidth <= 425){
-		pasteArea = document.getElementById("pasteAreaMob425");
-		convertArea = document.getElementById('convertedTextMob425');
-	}
-	else{
-		pasteArea = document.getElementById("pasteArea");
-		convertArea = document.getElementById('convertedText');
-	}
-
+	var pasteArea = document.getElementById("pasteArea");
+	var convertArea = document.getElementById('convertedText');
+	
 	convertArea.value = pasteArea.value;
 	convertArea.value = convertText(convertArea.value);
 }
 
 function insertCopied(){
-	var toInsertArea = "";
-
-	if(document.documentElement.clientWidth <= 425){
-		toInsertArea = document.getElementById("pasteAreaMob425");
-	}
-	else{
-		toInsertArea = document.getElementById("pasteArea");
-	}
+	var toInsertArea = document.getElementById("pasteArea");
 
 	navigator.clipboard.readText()
     .then((text)=>{
@@ -139,14 +123,7 @@ function clearTooltip(){
 
 window.onload = function (){
 	document.getElementById('copyPasted').addEventListener('click', ()=>{
-		let copyArea;
-
-		if(document.documentElement.clientWidth <= 425){
-			copyArea = document.getElementById('convertedTextMob425');
-		}
-		else{
-			copyArea = document.getElementById('convertedText');
-		}
+		let copyArea = document.getElementById('convertedText');
 
 		navigator.clipboard.writeText(copyArea.value);
 

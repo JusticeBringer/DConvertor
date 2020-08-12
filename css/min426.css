@@ -90,16 +90,16 @@
 	#paste{
 		margin-right: 2.2vw;
 	}
-	#pasteArea{
-		display: none;
+	
+	#pasteArea {
+		height: 20vh;
 	}
 
-	#pasteAreaMob425{
-		display: inline-block;
+	#convertedText {
+		height: 20vh;
 	}
 
 	textarea{
-		width: 70%;
 		margin: 0.4vh 0vh 2vh 4.5vh;
 	}
 
@@ -123,16 +123,6 @@
 		font-size: 4vw;
 		margin: 1vh 0 1vh 5vh;
 		padding: 0.75vw;
-	}
-
-	#convertedText{
-		display: none;
-	}
-	#convertedTextMob425{
-		display: inline-block;
-	}
-	#footer {
-		display: none;  
 	}
 
 	.footerLooks{
