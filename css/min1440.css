@@ -95,4 +95,20 @@
 		margin-left: -3vw;
 		font-size: 1.4vw;
 	}	
+	.modifyCheck{
+		display: inline-block;
+		margin: 2vh 0 0 5vh;
+	}
+	
+	body > div.row > div.fit15.fltLeft > div:nth-child(2) > label{
+		font-size: 1.3vw;
+		margin: 0 0 0 5vh;
+		letter-spacing: 0.2vw;
+		display: flex;
+		
+	}
+	input[type="checkbox" i]{
+		width: 2vh;
+		height: 2vh;
+	}
 }

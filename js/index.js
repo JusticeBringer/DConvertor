@@ -62,19 +62,40 @@ function transformDia(tDia){
 	return newWrd;
 }
 
-function convertText(textTo){
+function convertText(textTo, withLink){
 	var sngWrd = "";
 	var newText = "";
+	var count = 0;
 
 	for (var x of textTo){
+		count ++;
 		// if (typeof sngWrd === 'undefined')
 		// 	continue;
 
 		if(x === " "){
-			sngWrd = transformDia(sngWrd);
-			newText += sngWrd + " ";
+			console.log("Vez + " + sngWrd);
+			if((sngWrd[0] + sngWrd[1] + sngWrd[2] + sngWrd[3] + sngWrd[4] + sngWrd[5] + sngWrd[6] ) === "—Traian"){
+				if(withLink){
+					newText += "— Fr. Traian Dorz";
+					return newText;
+				}
+				else{
+					newText += "— Fr. Traian Dorz";
 
-			sngWrd = "";
+					for(let ind = count + 4; ind < textTo.length; ind ++){
+						newText += textTo[ind];
+					}
+
+					return newText;
+				}
+			}
+			else{
+				sngWrd = transformDia(sngWrd);
+				newText += sngWrd + " ";
+	
+				sngWrd = "";
+			}
+
 		}
 		else if(x === '\n'){
 			sngWrd = transformDia(sngWrd);
@@ -99,12 +120,27 @@ function convertText(textTo){
 	return newText;
 }
 
+function moveLocation(){
+	var convertArea = document.getElementById('convertedText');
+	convertArea.scrollIntoView();
+}
+
+function makeBigger(){
+	var convertArea = document.getElementById('convertedText');
+	convertArea.style.height = "30vh";
+}
+
 function moveText(){
 	var pasteArea = document.getElementById("pasteArea");
 	var convertArea = document.getElementById('convertedText');
+	var withLink = document.getElementById('cuSite').checked;
+	console.log(withLink);
 	
 	convertArea.value = pasteArea.value;
-	convertArea.value = convertText(convertArea.value);
+	convertArea.value = convertText(convertArea.value, withLink);
+
+	makeBigger();
+	moveLocation();
 }
 
 function insertCopied(){

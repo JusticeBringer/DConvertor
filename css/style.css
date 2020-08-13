@@ -99,7 +99,6 @@ section {
     box-shadow: 5px 2px 5px #888888;
 }
 .footerLooks{
-    background-color: #3d3a3a;
     box-shadow: 5px 2px 5px #888888;
 }
 
@@ -131,10 +130,10 @@ a:hover{
 }
 
 #footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
-	background-color: rgb(36, 37, 41);
+    position: fixed;
+    background-color: rgb(36, 37, 41);
 }
 
 .cancelFloat li{
@@ -260,4 +259,23 @@ label{
 }
 a{
     font-size: 3vw !important;
+}
+#page-container{
+	
+}
+#page-container:after{
+    content: "";
+  display: table;
+  clear: both;
+}
+
+.modifyCheck{
+    display: inline-block;
+    margin: 2vh 0 0 5vh;
+}
+
+body > div.row > div.fit15.fltLeft > div:nth-child(2) > label{
+    font-size: 3vw;
+    margin: 0 0 0 1vh;
+    letter-spacing: 0.2vw;
 }
