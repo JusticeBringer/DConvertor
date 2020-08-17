@@ -100,7 +100,7 @@
 		margin: 2vh 0 0 5vh;
 	}
 	
-	body > div.row > div.fit15.fltLeft > div:nth-child(2) > label{
+	#allContent > div.row > div.fit15.fltLeft > div:nth-child(2) > label{
 		font-size: 1.3vw;
 		margin: 0 0 0 5vh;
 		letter-spacing: 0.2vw;

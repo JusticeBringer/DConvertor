@@ -143,18 +143,6 @@ function moveText(){
 	moveLocation();
 }
 
-function moveTextMagic(){
-	var pasteArea = document.getElementById("pasteArea");
-	var convertArea = document.getElementById('convertedText');
-	var withLink = document.getElementById('cuSite').checked;
-	console.log(withLink);
-	
-	convertArea.value = pasteArea.value;
-	convertArea.value = convertText(convertArea.value, withLink);
-
-	makeBigger();
-}
-
 function insertCopied(){
 	var toInsertArea = document.getElementById("pasteArea");
 
@@ -188,21 +176,25 @@ myBlurFunction = function(state) {
     }
 };
 
+let once = 0;
+
 function executaActiune(){
 	var containerElement = document.getElementById('btn-magic');
+	once = 0;
 
 	insertCopied();
 
 	var pasteArea = document.getElementById("pasteArea");
 
-	let x = console.log(pasteArea.value);
-	let y = console.log(pasteArea.textContent);
-	let z = console.log(pasteArea.innerHTML);
 
 	setInterval(function(){ 
 		if(pasteArea.value !== undefined){
 			console.log("here");
-			moveText();
+
+			if (once === 0){
+				moveText();
+				once ++;
+			}
 
 			let copyArea = document.getElementById('convertedText');
 	

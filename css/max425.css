@@ -166,4 +166,9 @@
 	.forDesprep{
 		font-size: 3.5vw;
 	}
+	#allContent > div.row > div.fit15.fltLeft > div:nth-child(2) > label{
+		font-size: 3.2vw;
+		margin: 0 0 0 1vh;
+		letter-spacing: 0.2vw;
+	}
 } 
