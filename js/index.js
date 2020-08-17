@@ -143,6 +143,18 @@ function moveText(){
 	moveLocation();
 }
 
+function moveTextMagic(){
+	var pasteArea = document.getElementById("pasteArea");
+	var convertArea = document.getElementById('convertedText');
+	var withLink = document.getElementById('cuSite').checked;
+	console.log(withLink);
+	
+	convertArea.value = pasteArea.value;
+	convertArea.value = convertText(convertArea.value, withLink);
+
+	makeBigger();
+}
+
 function insertCopied(){
 	var toInsertArea = document.getElementById("pasteArea");
 
@@ -155,6 +167,53 @@ function insertCopied(){
 function clearTooltip(){
 	var tooltip = document.getElementById("myTooltip");
   	tooltip.innerHTML = "Copiază";
+}
+
+function clearTooltipMagic(){
+	var tooltip = document.getElementById("myTooltipMagic");
+  	tooltip.innerHTML = "Copiază";
+}
+
+myBlurFunction = function(state) {
+    /* state can be 1 or 0 */
+    var containerElement = document.getElementById('allContent');
+    var overlayEle = document.getElementById('overlay');
+
+    if (state) {
+        overlayEle.style.display = 'block';
+        containerElement.setAttribute('class', 'blur');
+    } else {
+        overlayEle.style.display = 'none';
+        containerElement.setAttribute('class', null);
+    }
+};
+
+function executaActiune(){
+	var containerElement = document.getElementById('btn-magic');
+
+	insertCopied();
+
+	var pasteArea = document.getElementById("pasteArea");
+
+	let x = console.log(pasteArea.value);
+	let y = console.log(pasteArea.textContent);
+	let z = console.log(pasteArea.innerHTML);
+
+	setInterval(function(){ 
+		if(pasteArea.value !== undefined){
+			console.log("here");
+			moveText();
+
+			let copyArea = document.getElementById('convertedText');
+	
+			navigator.clipboard.writeText(copyArea.value);
+	
+			var tooltip = document.getElementById("myTooltipMagic");
+				tooltip.innerHTML = "Copiat";
+		}
+	}, 1000);
+	
+
 }
 
 window.onload = function (){

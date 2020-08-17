@@ -87,5 +87,37 @@
 		padding: 1vw;
 		margin-left: -3vw;
 		font-size: 2vw;
-	}						
+	}		
+	#popup {
+		width: 50%;
+		height: 40%;
+		padding: 1vw;
+	}
+	
+	.hide-button{
+		font-size: 2vw !important;
+		margin-left: 35%;
+	}
+	
+	.forDespre{
+		font-size: 2vw;
+	}
+	
+	ol.forDespre > li{
+		font-size: 2vw;
+		float: none;
+	}
+	
+	.lessAici{
+		font-size: 2vw !important;
+		text-decoration: underline;
+	}
+	
+	.forDespreh2{
+		font-size: 2vw !important;
+	}
+	
+	.forDesprep{
+		font-size: 1.5vw;
+	}				
 }

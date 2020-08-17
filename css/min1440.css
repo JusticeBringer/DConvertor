@@ -111,4 +111,36 @@
 		width: 2vh;
 		height: 2vh;
 	}
+	#popup {
+		width: 30%;
+		height: 30%;
+		padding: 1vw;
+	}
+	
+	.hide-button{
+		font-size: 1vw !important;
+		margin-left: 35%;
+	}
+	
+	.forDespre{
+		font-size: 1vw;
+	}
+	
+	ol.forDespre > li{
+		font-size: 1vw;
+		float: none;
+	}
+	
+	.lessAici{
+		font-size: 1vw !important;
+		text-decoration: underline;
+	}
+	
+	.forDespreh2{
+		font-size: 1vw !important;
+	}
+	
+	.forDesprep{
+		font-size: 1vw;
+	}			
 }
