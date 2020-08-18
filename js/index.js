@@ -1,23 +1,3 @@
-function forImportIo(){
-	var proxyUrl = 'https://justicebringer.github.io/dconvertor/';
-    var targetUrl = 'https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile';
-
-	var request = new XMLHttpRequest();
-
-	request.onreadystatechange = function() {
-		let jsontext = request.responseText;
-		alert(jsontext);
-	}
-
-	var theLink = '';
-	var myKey = '72fc15d17e984b2f82db06e09121ed44320a66f9fe300007a95379505f9a7a74c650714654fcaa589b5f7462a28f2574f2c4d38eb243872f993df7298c7a8d748bc67959415f0d28c4a0e25e42134848';
-	var myUrl = 'https://justicebringer.github.io/DConvertor/';
-
-	request.open("GET", "https://extraction.import.io/query/extractor" + theLink + '?_apikey=' + myKey + '&url=' + myUrl, true);
-
-	request.send();
-}
-
 function transformDia(tDia){
 	if(tDia === ""){
 		return " ";
@@ -51,7 +31,7 @@ function transformDia(tDia){
 		newW += tDia[tDia.length - 1];
 
 	var newWrd = "";
-	console.log(newW);
+	console.log("Function transformDia: " + newW);
 
 	if(newW.search("Isus") >= 0){
 		for(let i = 0; i < tDia.length; i ++){
@@ -83,7 +63,7 @@ function convertText(textTo, withLink){
 		// 	continue;
 
 		if(x === " "){
-			console.log("Vez + " + sngWrd);
+			console.log("Function convertText: " + sngWrd);
 			if((sngWrd[0] + sngWrd[1] + sngWrd[2] + sngWrd[3] + sngWrd[4] + sngWrd[5] + sngWrd[6] ) === "—Traian"){
 				if(withLink){
 					newText += "— Fr. Traian Dorz";
@@ -126,7 +106,7 @@ function convertText(textTo, withLink){
 		newText += sngWrd + '\n';
 	}
 
-	console.log(newText);
+	console.log("Function convertText: " + newText);
 	return newText;
 }
 
@@ -144,10 +124,9 @@ function moveText(){
 	var pasteArea = document.getElementById("pasteArea");
 	var convertArea = document.getElementById('convertedText');
 	var withLink = document.getElementById('cuSite').checked;
-	console.log(withLink);
-	
-	convertArea.value = pasteArea.value;
-	convertArea.value = convertText(convertArea.value, withLink);
+	console.log("Function moveText, Check link: " + withLink);
+
+	convertArea.value = convertText(pasteArea.value, withLink);
 
 	makeBigger();
 	moveLocation();
@@ -160,6 +139,13 @@ function insertCopied(){
     .then((text)=>{
         toInsertArea.value = text;
 	});
+}
+
+function toMoveText(){
+	var toInsertArea = document.getElementById("pasteArea");
+	var convertedArea = document.getElementById("convertedText");
+
+	toInsertArea.value = convertedArea.value;
 }
 
 function clearTooltip(){
@@ -190,7 +176,6 @@ function openMail(){
 	window.location.href = "mailto:gabriel.univ208@gmail.com";
 }
 
-let once = 0;
 
 function countCharacters(){
 	var pasteArea = document.getElementById("pasteArea");
@@ -202,20 +187,20 @@ function countCharacters(){
 }
 
 function executaActiune(){
-	var containerElement = document.getElementById('btn-magic');
-	once = 0;
-
-	insertCopied();
-
-	var pasteArea = document.getElementById("pasteArea");
+	var once = 0;
 
 	setInterval(function(){ 
-		if(countCharacters() > 1){
-			console.log("In interval");
+		if (once === 0){
+			once = 1;
+			insertCopied();
+		}
 
-			if (once === 0){
+		if(countCharacters() > 1){
+			if(once === 1){
 				moveText();
-				once ++;
+				once = 2;
+				
+				console.log("In executa...");
 				
 				let copyArea = document.getElementById('convertedText');
 				navigator.clipboard.writeText(copyArea.value);

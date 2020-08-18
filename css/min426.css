@@ -133,8 +133,8 @@
 	}
 	#popup {
 		width: 50%;
-		height: 50%;
-		padding: 1vw;
+		height: 55%;
+		padding: 1vw 1vw 1vw 1vw;
 	}
 	
 	.hide-button{
