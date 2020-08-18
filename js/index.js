@@ -197,7 +197,7 @@ function countCharacters(){
 
 	console.log("L: " + pasteArea.length);
 	console.log("V: " + pasteArea.value.length);
-	
+
 	return pasteArea.value.length;
 }
 
@@ -216,11 +216,10 @@ function executaActiune(){
 			if (once === 0){
 				moveText();
 				once ++;
+				
+				let copyArea = document.getElementById('convertedText');
+				navigator.clipboard.writeText(copyArea.value);
 			}
-
-			let copyArea = document.getElementById('convertedText');
-	
-			navigator.clipboard.writeText(copyArea.value);
 		}
 	}, 1000);
 	
