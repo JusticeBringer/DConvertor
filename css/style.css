@@ -343,6 +343,7 @@ a{
 
 .hide-button{
     font-size: 1vw !important;
+    padding: 0.5vw;
 }
 
 #popup {

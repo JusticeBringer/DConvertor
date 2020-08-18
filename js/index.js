@@ -27,6 +27,16 @@ function transformDia(tDia){
 		return "Iisus";
 	if(tDia === "sînt")
 		return "sunt";
+	if(tDia === "Sînt")
+		return "Sunt";
+	if(tDia === "sîntem")
+		return "suntem";
+	if(tDia === "Sîntem")
+		return "Suntem";
+	if(tDia === "sînteți")
+		return "sunteți";
+	if(tDia === "Sînteți")
+		return "Sunteți";
 	
 	var newW = "";
 	newW += tDia[0];
@@ -176,7 +186,20 @@ myBlurFunction = function(state) {
     }
 };
 
+function openMail(){
+	window.location.href = "mailto:gabriel.univ208@gmail.com";
+}
+
 let once = 0;
+
+function countCharacters(){
+	var pasteArea = document.getElementById("pasteArea");
+
+	console.log("L: " + pasteArea.length);
+	console.log("V: " + pasteArea.value.length);
+	
+	return pasteArea.value.length;
+}
 
 function executaActiune(){
 	var containerElement = document.getElementById('btn-magic');
@@ -186,10 +209,9 @@ function executaActiune(){
 
 	var pasteArea = document.getElementById("pasteArea");
 
-
 	setInterval(function(){ 
-		if(pasteArea.value !== undefined){
-			console.log("here");
+		if(countCharacters() > 1){
+			console.log("In interval");
 
 			if (once === 0){
 				moveText();
@@ -199,9 +221,6 @@ function executaActiune(){
 			let copyArea = document.getElementById('convertedText');
 	
 			navigator.clipboard.writeText(copyArea.value);
-	
-			var tooltip = document.getElementById("myTooltipMagic");
-				tooltip.innerHTML = "Copiat";
 		}
 	}, 1000);
 	
