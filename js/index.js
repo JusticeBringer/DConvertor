@@ -186,7 +186,10 @@ function countCharacters(){
 	return pasteArea.value.length;
 }
 
+var times = 0;
+
 function executaActiune(){
+	document.getElementById("pasteArea").value = "";
 	var once = 0;
 
 	setInterval(function(){ 
@@ -198,6 +201,7 @@ function executaActiune(){
 		if(countCharacters() > 1){
 			if(once === 1){
 				moveText();
+					
 				once = 2;
 				
 				console.log("In executa...");
@@ -206,9 +210,7 @@ function executaActiune(){
 				navigator.clipboard.writeText(copyArea.value);
 			}
 		}
-	}, 1000);
-	
-
+	}, 300);
 }
 
 window.onload = function (){
