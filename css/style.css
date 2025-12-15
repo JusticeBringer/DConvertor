@@ -1,201 +1,471 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset='utf-8'>
-	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-	<title>DConvertor</title>
-	<meta name='viewport' content='width=device-width, initial-scale=1'>
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+main{
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+section {
+    line-height: 1.7em;
+    font-size: 1.6em;
+}
+
+.fit100{
+    width: 100%;
+}
+.fit90{
+    width: 90%;
+}
+.fit80{
+    width: 80%;
+}
+.fit70{
+    width: 70%;
+}
+.fit60{
+    width: 60%;
+}
+.fit50{
+    width: 50%;
+}
+.fit48{
+    width: 48%;
+}
+.fit40{
+    width: 40%;
+}
+.fit35{
+    width: 35%;
+}
+.fit30{
+    width: 30%;
+}
+.fit20{
+    width: 20%;
+}
+.fit15{
+    width: 15%;
+}
+.fit10{
+    width: 10%;
+}
+.fit5{
+    width: 5%;
+}
+.fit2{
+    width: 2%;
+}
+.fit1{
+    width: 1%;
+}
+
+.fltLeftStyle{
+    float: left;
+}
+
+.fltRightStyle{
+    float: right;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.text-banner{
+    text-align: center;
+    color: black;
+    font-weight: 500;
+}
+
+.textC{
+    color: black;
+}
+
+.banner{
+    background-color: #efefef;
+    color: white;
+}
+
+
+.barLooks{
+    background-color: #ffffff;
+    box-shadow: 5px 2px 5px #888888;
+}
+.footerLooks{
+    box-shadow: 5px 2px 5px #888888;
+}
+
+.menu {
+    list-style-type: none;
+    overflow: hidden;
+}
+.menu .icon{
+    display: none;
+}
+
+li {
+    float: left;
+}
+
+a{
+    text-decoration: none;
+    color: #44b4d2;
+}
+
+a:hover{
+    color: #1441b0;
+}
+.fltLeft{
+    float: left;
+}
+.fltRight{
+    float: right;
+}
+
+#footer {
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    background-color: rgb(36, 37, 41);
+}
+
+.cancelFloat li{
+    float: none;
+}
+
+label{
+    color: black;
+}
+
+.makeLateral{
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+    width: fit-content;
+    padding: 0.3vw;
+}
+
+.addBorderBot{
+    border-bottom: 2px solid black;
+}
+
+.btLog{
+    background-color: #4ca2ec;
+    color: white;
+    padding: 0.5vw;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+}
+.btLog:hover{
+    background-color: #3974ac;
+}
+
+.difBut{
+    background-color: #487196;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+}
+.difBut:hover{
+    background-color: #375d7e;
+}
+
+.copyBut{
+    background-color: #5baca1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+}
+
+.copyBut:hover{
+    background-color: #2d6964;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+.tooltip .tooltiptext {
+    width: 15vw;
+    border-radius: 6px;
+    padding: 3vw;
+    margin-left: -3vw;
+    font-size: 4vw;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    bottom: 150%;
+    left: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.btn-magic {
+    border: 1px solid black;
+    background-color: cadetblue;
+    color: white;
+    transition: ease-in-out 0.3s;
+}
+.btn-magic:hover{
+    color: white;
+    background-color: rgb(59, 97, 99);
+}
+#pasteArea {
+    display: inline-block;
+    border: 1px solid black;
+    margin-right: 5vh;
+    width: 70%;
+}
+#convertedText {
+    display: inline-block;
+    border: 1px solid black;
+    width: 70%;
+    margin-bottom: 10vh;
+}
+a{
+    font-size: 3vw !important;
+}
+#page-container{
 	
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>	
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/fonts.css'>
+}
+#page-container:after{
+    content: "";
+  display: table;
+  clear: both;
+}
 
-	
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/max425.css'>
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/min426.css'>
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/min640.css'>
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/min768.css'>
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/min1024.css'>
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/min1280.css'>
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/min1440.css'>
-	<link rel='stylesheet' type='text/css' media='screen' href='./css/min1920.css'>
-	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap">
+.modifyCheck{
+    display: inline-block;
+    margin: 2vh 0 0 5vh;
+}
 
-	<script src='./js/index.js'></script>
+#allContent > div.row > div.fit15.fltLeft > div:nth-child(2) > label{
+    font-size: 3vw;
+    margin: 0 0 0 1vh;
+    letter-spacing: 0.2vw;
+}
 
-</head>
+.showDespre{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
 
-<body>
-	
-	<div id="overlay">
-		<div id="popup"> <h2 class="forDespreh2"> Site realizat, în special, pentru site-ul <a href="https://www.poeziitraiandorz.ro/" class="lessAici"> poeziitraiandorz.ro </a> </h2>
+.makePopup{
+    background-color: bisque;
+    width: 20%;
+    height: 20%;
+}
 
-			<h2 class="forDespreh2"> Butonul magic are în componența sa 3 acțiuni </h2>
-			<ol class="forDespre">
-				<li>
-					inserează textul copiat
-				</li>
-				<li>
-					convertește textul
-				</li>
-				<li>
-					copiază texul convertit
-				</li>
-			</ol>  
-		
-			<p class="forDesprep"> Sugestiile și îmbunătățirile se pot lăsa <a class="lessAici" onclick="openMail()"> aici </a> </p>
+.blur   {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+#overlay    {
+    position: fixed;
+    display: none;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(255,255,255,.4);
+    z-index: 999;
+}
 
-			<a href="javascript:myBlurFunction(0);" class="hide-button">Închide</a>
-		</div>
-	</div>
-	<div id="allContent">
-		<header>
-			<div id="header-wrap">
-				<div class="row barLooks">
-					<div class="fit10 fltLeft"><p/></div>
-					<div class="fit80 fltLeft">
-						<nav>
-							<ul class="menu" id="">
-								<li>  <a href="#" class="big-name"> DConvertor </a> </li>
-		
-								<!-- Responsive menu
-								<li class="icon" href="javascript:void(0)" onclick="">
-									<i class="fa fa-bars"></i>
-								</li>
-								-->
-		 
+#popup{
+    position: absolute;
+    background: rgb(255,255,255);
+    border: 5px solid rgb(90,90,90);
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
 
-								<!-- HeaderLinks -->
-								<li class="fltRight"> <a href="#" class="btn-magic" id="btn-magic" onclick="executaActiune()"> Buton magic </a> </li>
+#popup {
+    width: 20vw;
+    height: 30%;
+    padding: 0.2vw;
+}
 
-								<li class="fltRight" style="margin-right: 15px;">
-									<input type="checkbox" id="theme-toggle" style="display: none;">
-									<label for="theme-toggle" class="theme-toggle-label" style="font-size: 16px; border: 1px solid blue; border-radius: 16px; padding: 4px;">☀️ / 🌙</label>
-							</li>
-							</ul>
-						</nav>
-					</div>
-					<div class="fit10 fltLeft">
-						<p/>
-					</div>
-				</div>
-			</div>
+.hide-button{
+    border: 1px solid black;
+    background-color: rgb(87, 114, 116);
+    color: white;
+    transition: ease-in-out 0.3s;
+}
+.hide-button:hover{
+    color: white;
+    background-color: rgb(13, 17, 17);
+}
 
-		</header>
+.hide-button{
+    font-size: 1vw !important;
+    padding: 0.5vw;
+}
 
-		<div class="wrapper-mode">
+#popup {
+    width: 20vw;
+    height: 30%;
+    padding: 0.2vw;
+}
 
-			<div class="row">
-				<div class="fit40 fltLeft">
-					<div class="row">
-						<div class="fit30 fltLeft"><p></p></div>
-						<div class="fit40 fltLeft addBorderBot">
-							<h1 class="textC"> Reguli: </h1>
-							<ul class="cancelFloat">
-								<li>
-									î &rarr; â/u
-								</li>
-								<li>
-									Isus &rarr; Iisus
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- <div class="row">
-						<div class="fit30 fltLeft"><p/></div>
-						<div class="fit40 fltLeft">
-							<p class="alterLabel">Introduceți link-ul</p> </br>
-							
-							<input type="text">
-						</div>
-					</div>
-					<div class="row">
-						<div class="fit30 fltLeft"><p/></div>
-						<div class="fit40 fltLeft">
-							<div> <p class="alterLabel makeLateral"> Sau </p>
-								</div>
-						</div>
-					</div> -->
-					<div class="row">
-						<div class="fit30 fltLeft"><p/></div>
-						<div class="fit70 fltLeft">
-							<button class="alterLabel btLog" id="paste" onclick="insertCopied()"> Inserați textul copiat </button>
-							<span> sau Introduceți textul </span> 
-							</br>
-							</br>
-							<textarea id="pasteArea" name="pasteArea" rows="25" cols="50"></textarea>
-						</div>
-					</div>
-	
-				</div>
-	
-				<div class="fit15 fltLeft">
-					<div class="row">
-						<div class="fit5 fltLeft spaceToMiddle"></p>
-						</div>	
-					</div>
-					<div class="row">
-						<div class="fit5 fltLeft"> </p></div>
-						<button class="hwB difBut" id="btCon" onclick="moveText()"> Convertește </button>
-						<br>
-						<input type="checkbox" id="cuSite" name="cuSite" value="Site" class="modifyCheck" checked="true">
-						<label for="cuSite"> exclude link-ul </label>
-					</div>
-				</div>
-	
-				<div class="fit40 fltLeft">
-					<div class="row">
-						<div class="fit5 fltLeft"> </p></div>
-						<div class="fit90 fltLeft">
-							<h1 class="textC"> Textul convertit </h1>
-							<div class="tooltip">
-								<button class="copyBut" id="copyPasted" onmouseout="clearTooltip()"> 
-									<span class="tooltiptext" id="myTooltip">Copiază</span>
-									Copiază textul 
-								</button>
-							</div>
-							</br>
-							
-							<textarea id="convertedText" name="convertedText" rows="35" cols="50">
-							</textarea>
-						</div>
-					</div>
-				</div>
-			</div>
-	
-		</div>
+.forDespre{
+    font-size: 1vw;
+}
 
+ol.forDespre > li{
+    font-size: 0.8vw;
+    float: none;
+}
 
-		<div id="page-container">
-			<div id="content-wrap">
-			</div>
-			
-		</div>
-	</div>
-	<footer id="footer">
-		<div class="footerLooks">
-			<div class="fit10 fltLeft"><p/></div>
-			<div class="fit80 fltLeft">
-				<nav>
-					<ul class="menu" id="">
-						<li>  <a href="#" class="big-name"> DConvertor </a> </li>
+.lessAici{
+    font-size: 1vw !important;
+    text-decoration: underline;
+}
 
-						<!-- Responsive menu
-						<li class="icon" href="javascript:void(0)" onclick="">
-							<i class="fa fa-bars"></i>
-						</li>
-						-->
+/* --- DARK THEME VARIABLES (Add this block at the top of your CSS) --- */
+:root {
+    /* Define colors for Light Theme */
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --header-footer-background: #efefef;
+    --bar-shadow: #888888;
+    --input-border-color: #000000;
+    --popup-background: bisque;
+    --primary-link-color: #44b4d2;
+    --primary-link-hover: #1441b0;
+    --banner-text-color: black;
+}
 
-						<!-- HeaderLinks -->
-						<li class="fltRight"> <a href="#" onclick="myBlurFunction(1)"> Despre </a> </li>
-					</ul>
-				</nav>
-			</div>
-			<div class="fit10 fltLeft">
-				<p/>
-			</div>
-		</div>
-	</footer>
-</body>
+/* Dark Theme overrides */
+.dark-theme {
+    /* Define colors for Dark Theme */
+    --background-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --header-footer-background: #2d2d2d;
+    --bar-shadow: #000000;
+    --input-border-color: #444444;
+    --popup-background: #252525;
+    --primary-link-color: #7ab8c9;
+    --primary-link-hover: #9bd7ea;
+    --banner-text-color: white;
+}
 
-</html>
+/* --- APPLYING VARIABLES TO EXISTING SELECTORS --- */
+
+/* 1. Body/Global Background and Text */
+html, body {
+    /* Apply variables to fundamental elements */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    /* ... (rest of the properties remain) ... */
+}
+/* 2. Banner/Bar Background */
+.banner {
+    background-color: var(--header-footer-background);
+    color: var(--banner-text-color); /* Changed from white to variable */
+}
+
+/* 3. Bar/Shadows */
+.barLooks {
+    background-color: var(--background-color); /* Changed to use var */
+    box-shadow: 5px 2px 5px var(--bar-shadow);
+}
+.footerLooks {
+    box-shadow: 5px 2px 5px var(--bar-shadow);
+}
+/* 4. Text Colors */
+.text-banner, .textC, label {
+    color: var(--text-color); /* Use text variable */
+}
+
+/* 5. Links */
+a {
+    color: var(--primary-link-color);
+}
+a:hover {
+    color: var(--primary-link-hover);
+}
+
+/* 6. Input/Textarea Borders */
+#pasteArea, #convertedText {
+    border: 1px solid var(--input-border-color);
+}
+
+/* 7. Popup */
+.makePopup { /* This class is unused, but just in case */
+    background-color: var(--popup-background);
+}
+#popup {
+    background: var(--background-color);
+    border: 5px solid var(--input-border-color);
+}
+
+/* ... (existing styles) ... */
+
+/* 6. Input/Textarea Styles (MODIFIED) */
+#pasteArea, #convertedText {
+    display: inline-block;
+    /* Use variables for text and background color */
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--input-border-color);
+    
+    /* Existing layout properties */
+    width: 70%;
+}
+#pasteArea {
+    margin-right: 5vh;
+}
+#convertedText {
+    margin-bottom: 10vh;
+}
+
+.wrapper-mode {
+    background-color: var(--background-color);
+
+}
+/* ... (rest of the styles) ... */
