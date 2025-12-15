@@ -63,9 +63,15 @@
 									<i class="fa fa-bars"></i>
 								</li>
 								-->
-		
+		 
+
 								<!-- HeaderLinks -->
 								<li class="fltRight"> <a href="#" class="btn-magic" id="btn-magic" onclick="executaActiune()"> Buton magic </a> </li>
+
+								<li class="fltRight" style="margin-right: 15px;">
+									<input type="checkbox" id="theme-toggle" style="display: none;">
+									<label for="theme-toggle" class="theme-toggle-label" style="font-size: 16px; border: 1px solid blue; border-radius: 16px; padding: 4px;">☀️ / 🌙</label>
+							</li>
 							</ul>
 						</nav>
 					</div>
@@ -74,86 +80,90 @@
 					</div>
 				</div>
 			</div>
+
 		</header>
 
-		<div class="row">
-			<div class="fit40 fltLeft">
-				<div class="row">
-					<div class="fit30 fltLeft"><p></p></div>
-					<div class="fit40 fltLeft addBorderBot">
-						<h1 class="textC"> Reguli: </h1>
-						<ul class="cancelFloat">
-							<li>
-								î &rarr; â/u
-							</li>
-							<li>
-								Isus &rarr; Iisus
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- <div class="row">
-					<div class="fit30 fltLeft"><p/></div>
-					<div class="fit40 fltLeft">
-						<p class="alterLabel">Introduceți link-ul</p> </br>
-						
-						<input type="text">
-					</div>
-				</div>
-				<div class="row">
-					<div class="fit30 fltLeft"><p/></div>
-					<div class="fit40 fltLeft">
-						<div> <p class="alterLabel makeLateral"> Sau </p>
-							</div>
-					</div>
-				</div> -->
-				<div class="row">
-					<div class="fit30 fltLeft"><p/></div>
-					<div class="fit70 fltLeft">
-						<button class="alterLabel btLog" id="paste" onclick="insertCopied()"> Inserați textul copiat </button>
-						<span> sau Introduceți textul </span> 
-						</br>
-						</br>
-						<textarea id="pasteArea" name="pasteArea" rows="25" cols="50"></textarea>
-					</div>
-				</div>
+		<div class="wrapper-mode">
 
-			</div>
-
-			<div class="fit15 fltLeft">
-				<div class="row">
-					<div class="fit5 fltLeft spaceToMiddle"></p>
-					</div>	
-				</div>
-				<div class="row">
-					<div class="fit5 fltLeft"> </p></div>
-					<button class="hwB difBut" id="btCon" onclick="moveText()"> Convertește </button>
-					<br>
-					<input type="checkbox" id="cuSite" name="cuSite" value="Site" class="modifyCheck" checked="true">
-					<label for="cuSite"> exclude link-ul </label>
-				</div>
-			</div>
-
-			<div class="fit40 fltLeft">
-				<div class="row">
-					<div class="fit5 fltLeft"> </p></div>
-					<div class="fit90 fltLeft">
-						<h1 class="textC"> Textul convertit </h1>
-						<div class="tooltip">
-							<button class="copyBut" id="copyPasted" onmouseout="clearTooltip()"> 
-								<span class="tooltiptext" id="myTooltip">Copiază</span>
-								Copiază textul 
-							</button>
+			<div class="row">
+				<div class="fit40 fltLeft">
+					<div class="row">
+						<div class="fit30 fltLeft"><p></p></div>
+						<div class="fit40 fltLeft addBorderBot">
+							<h1 class="textC"> Reguli: </h1>
+							<ul class="cancelFloat">
+								<li>
+									î &rarr; â/u
+								</li>
+								<li>
+									Isus &rarr; Iisus
+								</li>
+							</ul>
 						</div>
-						</br>
-						
-						<textarea id="convertedText" name="convertedText" rows="35" cols="50">
-						</textarea>
+					</div>
+					<!-- <div class="row">
+						<div class="fit30 fltLeft"><p/></div>
+						<div class="fit40 fltLeft">
+							<p class="alterLabel">Introduceți link-ul</p> </br>
+							
+							<input type="text">
+						</div>
+					</div>
+					<div class="row">
+						<div class="fit30 fltLeft"><p/></div>
+						<div class="fit40 fltLeft">
+							<div> <p class="alterLabel makeLateral"> Sau </p>
+								</div>
+						</div>
+					</div> -->
+					<div class="row">
+						<div class="fit30 fltLeft"><p/></div>
+						<div class="fit70 fltLeft">
+							<button class="alterLabel btLog" id="paste" onclick="insertCopied()"> Inserați textul copiat </button>
+							<span> sau Introduceți textul </span> 
+							</br>
+							</br>
+							<textarea id="pasteArea" name="pasteArea" rows="25" cols="50"></textarea>
+						</div>
+					</div>
+	
+				</div>
+	
+				<div class="fit15 fltLeft">
+					<div class="row">
+						<div class="fit5 fltLeft spaceToMiddle"></p>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="fit5 fltLeft"> </p></div>
+						<button class="hwB difBut" id="btCon" onclick="moveText()"> Convertește </button>
+						<br>
+						<input type="checkbox" id="cuSite" name="cuSite" value="Site" class="modifyCheck" checked="true">
+						<label for="cuSite"> exclude link-ul </label>
+					</div>
+				</div>
+	
+				<div class="fit40 fltLeft">
+					<div class="row">
+						<div class="fit5 fltLeft"> </p></div>
+						<div class="fit90 fltLeft">
+							<h1 class="textC"> Textul convertit </h1>
+							<div class="tooltip">
+								<button class="copyBut" id="copyPasted" onmouseout="clearTooltip()"> 
+									<span class="tooltiptext" id="myTooltip">Copiază</span>
+									Copiază textul 
+								</button>
+							</div>
+							</br>
+							
+							<textarea id="convertedText" name="convertedText" rows="35" cols="50">
+							</textarea>
+						</div>
 					</div>
 				</div>
 			</div>
+	
 		</div>
-
 
 
 		<div id="page-container">
