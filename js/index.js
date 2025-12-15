@@ -1,4 +1,4 @@
-// --- DYNAMIC CONTENT MAPPING FUNCTIONS ---
+// --- DYNAMIC CONTENT MAPPING FUNCTIONS (UNCHANGED) ---
 
 /**
  * Extracts the numerical ID from the poem's URL.
@@ -36,7 +36,7 @@ function getBookTitle(poemId) {
   return "Volum Necunoscut";
 }
 
-// --- CORE CONVERSION FUNCTION ---
+// --- CORE CONVERSION FUNCTION (UNCHANGED) ---
 
 function transformDia(tDia) {
   if (tDia === "") {
@@ -131,7 +131,7 @@ function convertText(textTo, shouldExcludeLink) {
   const dynamicName = getBookTitle(poemId);
 
   // New, standardized signature format
-  const newSignature = `Traian Dorz, din vol. ${dynamicName}`;
+  const newSignature = `— Traian Dorz, din vol. ${dynamicName}`;
 
   // Reset textTo to the cleaned text for the main loop
   textTo = textWithoutSignature;
@@ -169,13 +169,53 @@ function convertText(textTo, shouldExcludeLink) {
   // Add two newlines for separation before the signature
   newText += "\n\n" + newSignature;
 
-  // If the checkbox `shouldExcludeLink` is true AND we successfully captured a link, append it with a leading newline.
+  // If the checkbox `shouldExcludeLink` is false AND we successfully captured a link, append it with a leading newline.
   if (shouldExcludeLink === false && originalLink) {
     newText += "\n" + originalLink;
   }
 
   console.log("Function convertText: " + newText);
   return newText;
+}
+
+// --- DARK THEME LOGIC (NEW FUNCTIONS) ---
+
+const THEME_KEY = "theme-preference";
+const DARK_CLASS = "dark-theme";
+
+/**
+ * Applies the specified theme preference to the <body> element.
+ * @param {boolean} isDark - true for dark mode, false for light mode.
+ */
+function setTheme(isDark) {
+  document.body.classList.toggle(DARK_CLASS, isDark);
+  localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
+
+  // Update the checkbox state to match the applied theme
+  const toggle = document.getElementById("theme-toggle");
+  if (toggle) {
+    toggle.checked = isDark;
+  }
+}
+
+/**
+ * Initializes the theme based on localStorage or system preference.
+ */
+function initializeTheme() {
+  const savedPreference = localStorage.getItem(THEME_KEY);
+  let prefersDark;
+
+  if (savedPreference) {
+    // Use saved preference
+    prefersDark = savedPreference === "dark";
+  } else {
+    // Check system preference
+    prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  setTheme(prefersDark);
 }
 
 // --- UI/HELPER FUNCTIONS (UNCHANGED) ---
@@ -282,7 +322,21 @@ function executaActiune() {
   }, 300);
 }
 
+// --- WINDOW.ONLOAD MODIFIED FOR THEME INITIALIZATION AND TOGGLE ---
+
 window.onload = function () {
+  // Initialize the theme immediately
+  initializeTheme();
+
+  // Event listener for the theme toggle switch
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("change", (event) => {
+      setTheme(event.target.checked);
+    });
+  }
+
+  // Original event listener for copy button
   document.getElementById("copyPasted").addEventListener("click", () => {
     let copyArea = document.getElementById("convertedText");
 
