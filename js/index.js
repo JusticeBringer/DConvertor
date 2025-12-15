@@ -1,8 +1,48 @@
+// --- DYNAMIC CONTENT MAPPING FUNCTIONS ---
+
+/**
+ * Extracts the numerical ID from the poem's URL.
+ * Example: https://www.poeziitraiandorz.ro/1392-Ce-sfint-si-nalt-curaj -> 1392
+ * @param {string} url - The URL string.
+ * @returns {number} The extracted ID or 0 if not found.
+ */
+function extractPoemId(url) {
+    // Looks for a number after the last '/' and before the first non-numeric character (like '-')
+    const match = url.match(/\/(\d+)[-\/]?/);
+    if (match && match[1]) {
+        return parseInt(match[1], 10);
+    }
+    return 0; // Default to 0 if ID extraction fails
+}
+
+/**
+ * Maps a poem ID to its corresponding book title based on specified ranges.
+ * NOTE: You can add more ranges here as needed.
+ * @param {number} poemId - The ID number extracted from the poem's URL.
+ * @returns {string} The name of the volume (e.g., "Cântarea Anilor").
+ */
+function getBookTitle(poemId) {
+    // Defined ranges based on your request:
+    if (poemId >= 1384 && poemId <= 1562) {
+        return "Cântarea Anilor";
+    } else if (poemId >= 1563 && poemId <= 1734) {
+        return "Cântările Roadelor";
+    }
+    
+    // Add more ranges here as you determine them...
+    
+    // Default return for IDs outside the known ranges
+    return "Volum Necunoscut"; 
+}
+
+// --- CORE CONVERSION FUNCTION ---
+
 function transformDia(tDia){
 	if(tDia === ""){
 		return " ";
 	}
 
+	// Direct word replacements for specific words (sînt/sunt, Isus/Iisus)
 	if(tDia === "Isus")
 		return "Iisus";
 	if(tDia === "sînt")
@@ -19,6 +59,7 @@ function transformDia(tDia){
 		return "Sunteți";
 	
 	var newW = "";
+	// Process based on position: 'î' -> 'â' except at the beginning or end
 	newW += tDia[0];
 	for(let i = 1; i < tDia.length - 1; i ++){
 		if(tDia[i] === 'î')
@@ -33,6 +74,7 @@ function transformDia(tDia){
 	var newWrd = "";
 	console.log("Function transformDia: " + newW);
 
+	// Special case replacement for "Isus" (if it was missed by the initial check)
 	if(newW.search("Isus") >= 0){
 		for(let i = 0; i < tDia.length; i ++){
 			if(       newW[i] === 'I' 
@@ -53,38 +95,46 @@ function transformDia(tDia){
 }
 
 function convertText(textTo, withLink){
-	var sngWrd = "";
-	var newText = "";
-	var count = 0;
+    var sngWrd = "";
+    var newText = "";
+    
+    // 1. Prepare Text: Remove link and extract ID
+    const lines = textTo.trim().split('\n');
+    let poemId = 0;
+    let textWithoutSignature = textTo;
+    
+    // Check if the last line looks like a URL
+    const lastLine = lines[lines.length - 1].trim();
 
+    if (lastLine.startsWith('http')) {
+        poemId = extractPoemId(lastLine);
+        // Remove the link line and the traditional signature line ("—Traian Dorz") if it exists
+        textWithoutSignature = lines.slice(0, -1).join('\n');
+    } 
+    
+    // Determine the dynamic ending based on the extracted ID
+    const dynamicName = getBookTitle(poemId);
+    
+    // The signature should only be "Fr. Traian Dorz" if withLink is true, otherwise the full volume name.
+    // NOTE: Based on your request, the new format is always "Traian Dorz, din vol. DynamicName"
+    const newSignature = `Traian Dorz, din vol. „${dynamicName}”`;
+
+    // Reset textTo to the cleaned text for the main loop
+    textTo = textWithoutSignature;
+
+    // 2. Process Text (Word by Word)
 	for (var x of textTo){
-		count ++;
-		// if (typeof sngWrd === 'undefined')
-		// 	continue;
-
+		
 		if(x === " "){
 			console.log("Function convertText: " + sngWrd);
-			if((sngWrd[0] + sngWrd[1] + sngWrd[2] + sngWrd[3] + sngWrd[4] + sngWrd[5] + sngWrd[6] ) === "—Traian"){
-				if(withLink){
-					newText += "— Fr. Traian Dorz";
-					return newText;
-				}
-				else{
-					newText += "— Fr. Traian Dorz";
+			
+            // --- The original logic for checking "—Traian" is REMOVED/DEPRECATED here ---
+            // The signature is now handled at the end of the function.
+			
+			sngWrd = transformDia(sngWrd);
+			newText += sngWrd + " ";
 
-					for(let ind = count + 4; ind < textTo.length; ind ++){
-						newText += textTo[ind];
-					}
-
-					return newText;
-				}
-			}
-			else{
-				sngWrd = transformDia(sngWrd);
-				newText += sngWrd + " ";
-	
-				sngWrd = "";
-			}
+			sngWrd = "";
 
 		}
 		else if(x === '\n'){
@@ -98,17 +148,34 @@ function convertText(textTo, withLink){
 		}
 	}
 	
-	if (typeof sngWrd !== 'undefined'){
-		if (x !== " " && x !== "\n"){
-			sngWrd = transformDia(sngWrd);
-		}
-
-		newText += sngWrd + '\n';
+    // 3. Handle the last word if there was no trailing space/newline
+	if (typeof sngWrd !== 'undefined' && sngWrd !== ''){
+		sngWrd = transformDia(sngWrd);
+		newText += sngWrd; 
 	}
+    
+    // 4. Add the new dynamic signature
+    
+    // Ensure the signature is on a new line
+    if (newText.length > 0 && !newText.trim().endsWith(newSignature.substring(0, 10)) && !newText.endsWith('\n')) {
+        newText += '\n';
+    }
+    
+    newText = newText.trim() + '\n\n' + newSignature;
+    
+    // If the original text ended with a link, we need to decide what to do with the link.
+    // The previous implementation ignored the link if `withLink` was true and only returned the signature.
+    // We will keep the link in the output if `withLink` is selected, using the original last line.
+    if(withLink && lastLine.startsWith('http')) {
+        newText += '\n' + lastLine;
+    }
+
 
 	console.log("Function convertText: " + newText);
 	return newText;
 }
+
+// --- UI/HELPER FUNCTIONS (UNCHANGED) ---
 
 function moveLocation(){
 	var convertArea = document.getElementById('convertedText');
@@ -126,6 +193,7 @@ function moveText(){
 	var withLink = document.getElementById('cuSite').checked;
 	console.log("Function moveText, Check link: " + withLink);
 
+	// The convertText function now handles ID extraction internally
 	convertArea.value = convertText(pasteArea.value, withLink);
 
 	makeBigger();
