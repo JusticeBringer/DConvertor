@@ -16,24 +16,40 @@ function extractPoemId(url) {
  * Maps a poem ID to its corresponding book title based on specified ranges.
  */
 function getBookTitle(poemId) {
-  // Defined ranges based on your request:
-  if (poemId >= 1 && poemId <= 140) {
-    return "Cântările Dintâi";
-  }
-  if (poemId >= 141 && poemId <= 310) {
-    return "Cântări Îndepărtate";
-  }
-  if (poemId >= 1384 && poemId <= 1562) {
-    return "Cântarea Anilor";
-  }
-  if (poemId >= 1563 && poemId <= 1734) {
-    return "Cântările Roadelor";
-  }
+  if (poemId < 1) return "";
 
-  // Add more ranges here as you determine them...
+  if (poemId <= 140) return "Cântările Dintâi";
+  if (poemId <= 310) return "Cântări Îndepărtate";
+  if (poemId <= 420) return "Cântări Luptătoare";
+  if (poemId <= 515) return "Cântările Bibliei";
+  if (poemId <= 665) return "Cântările Psalmilor";
+  if (poemId <= 733) return "Poemele lui Solomon";
+  if (poemId <= 911) return "Comori Nemuritoare";
+  if (poemId <= 981) return "Osana, Osana";
+  if (poemId <= 1089) return "Cântarea Îngerașilor";
+  if (poemId <= 1103) return "Câte-o povestire mică";
+  if (poemId <= 1218) return "Cântă-mi, mamă";
+  if (poemId <= 1383) return "Album Biblic colorat";
+  if (poemId <= 1562) return "Cântarea Anilor";
+  if (poemId <= 1734) return "Cântările Roadelor";
+  if (poemId <= 1975) return "Cântări de Drum";
+  if (poemId <= 2173) return "Cântarea Cântărilor mele";
+  if (poemId <= 2408) return "Cântări Nemuritoare";
+  if (poemId <= 2640) return "Cântările din Urmă";
+  if (poemId <= 2853) return "Cântarea Învierii";
+  if (poemId <= 3102) return "Cântarea Veșniciei";
+  if (poemId <= 3352) return "Cântarea Biruinței";
+  if (poemId <= 3485) return "Cântări Uitate";
+  if (poemId <= 3737) return "Cântări de Sus";
+  if (poemId <= 3953) return "Cântări Noi";
+  if (poemId <= 4157) return "Cântările Căinței";
+  if (poemId <= 4357) return "Cântările Eterne";
+  if (poemId <= 4555) return "Cântarea Viitoare";
+  if (poemId <= 4742) return "Biblia Versificată";
+  if (poemId <= 4812) return "Minune și Taină";
+  if (poemId <= 4863) return "Eternele Poeme";
 
-  // Default return for IDs outside the known ranges
-  return "Volum Necunoscut";
+  return "";
 }
 
 // --- CORE CONVERSION FUNCTION (UNCHANGED) ---
@@ -124,6 +140,24 @@ function convertText(textTo, shouldExcludeLink) {
     break;
   }
 
+  // TITLE REMOVAL: remove the first line when it's clearly a title.
+  // Heuristic: remove if the first line is followed by a blank line, or if it is short (<= 8 words).
+  if (lines.length > 0) {
+    const firstLine = lines[0].trim();
+    if (firstLine !== "") {
+      const hasBlankAfter = lines.length > 1 && lines[1].trim() === "";
+      const wordCount = firstLine.split(/\s+/).filter(Boolean).length;
+      if (hasBlankAfter || wordCount <= 8) {
+        // Remove title line
+        lines.shift();
+        // If there's an immediate blank line after the title, remove it as well
+        if (lines.length > 0 && lines[0].trim() === "") {
+          lines.shift();
+        }
+      }
+    }
+  }
+
   // Reconstruct the clean poem text
   let textWithoutSignature = lines.join("\n");
 
@@ -131,7 +165,7 @@ function convertText(textTo, shouldExcludeLink) {
   const dynamicName = getBookTitle(poemId);
 
   // New, standardized signature format
-  const newSignature = `— Traian Dorz, din vol. ${dynamicName}`;
+  const newSignature = `~Traian Dorz,\nvolumul „${dynamicName}”`;
 
   // Reset textTo to the cleaned text for the main loop
   textTo = textWithoutSignature;
