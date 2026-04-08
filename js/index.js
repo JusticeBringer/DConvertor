@@ -157,6 +157,24 @@ function convertText(textTo, shouldExcludeLink) {
     }
   }
 
+  // SUBTITLE REMOVAL: remove lines that look like subtitles (e.g., "- după Matei 28, 20 -")
+  // These typically start and end with dashes or are short reference lines
+  if (lines.length > 0) {
+    const firstLine = lines[0].trim();
+    // Check if it's a subtitle: starts with dash, or is a biblical reference pattern
+    if (
+      (firstLine.startsWith("-") && firstLine.endsWith("-")) ||
+      (firstLine.startsWith("(") && firstLine.endsWith(")")) ||
+      /^-?\s*(după|cf\.|conform|din)\s+/i.test(firstLine)
+    ) {
+      lines.shift(); // Remove subtitle line
+      // Remove any blank line that follows
+      if (lines.length > 0 && lines[0].trim() === "") {
+        lines.shift();
+      }
+    }
+  }
+
   // Reconstruct the clean poem text
   let textWithoutSignature = lines.join("\n");
 
