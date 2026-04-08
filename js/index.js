@@ -141,13 +141,12 @@ function convertText(textTo, shouldExcludeLink) {
   }
 
   // TITLE REMOVAL: remove the first line when it's clearly a title.
-  // Heuristic: remove if the first line is followed by a blank line, or if it is short (<= 8 words).
+  // Heuristic: remove only if the first line is followed by a blank line.
   if (lines.length > 0) {
     const firstLine = lines[0].trim();
     if (firstLine !== "") {
       const hasBlankAfter = lines.length > 1 && lines[1].trim() === "";
-      const wordCount = firstLine.split(/\s+/).filter(Boolean).length;
-      if (hasBlankAfter || wordCount <= 8) {
+      if (hasBlankAfter) {
         // Remove title line
         lines.shift();
         // If there's an immediate blank line after the title, remove it as well
