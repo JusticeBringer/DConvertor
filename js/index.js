@@ -164,7 +164,10 @@ function convertText(textTo, shouldExcludeLink) {
   const dynamicName = getBookTitle(poemId);
 
   // New, standardized signature format
-  const newSignature = `~Traian Dorz,\nvolumul „${dynamicName}”`;
+  // Only include volume info if we have a valid book title
+  const newSignature = dynamicName
+    ? `~Traian Dorz,\nvolumul „${dynamicName}"`
+    : `~Traian Dorz`;
 
   // Reset textTo to the cleaned text for the main loop
   textTo = textWithoutSignature;
